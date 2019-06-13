@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hash</title>
 </head>
+
 <body>
-    <input type="text">
-    <input id="botao" type="button" value="" onclick="criaLista()">
-    <div id="lista"></div>
+    <div>
+        <input id="input1" type="number" min="0" value="13">
+        <input id="botao" type="button" value="Criar Hash" onclick="criaLista()">
+    </div>
+    <div>
+        <input id="input2" type="number" min="0" placeholder="id">
+        <input id="input3" type="text" placeholder="nome">
+        <input type="button" onclick="add()"  value="Inserir">
+        <input type="button" onclick="remove()" value="REmover">
+    </div>
+    <br />
+    <table id="lista" border="1">
+
+    </table>
 
 
     <script src="teste1.js"></script>
     <script src="teste1.js"></script>
 </body>
+
 </html>
