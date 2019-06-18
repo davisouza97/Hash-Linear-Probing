@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hash</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
@@ -19,18 +20,22 @@
         <input id="rangeMax" type="number" min="0" value="1000">
         <input class="btn btn-outline-success" id="botao" type="button" value="Criar Hash" onclick="criaLista()">
     </div>
-    <div id="div2" style="display: none"> 
-        <div class="col-md-6" style="display: inline-block">
-                <input id="input2" type="number" min="0" placeholder="id">
-                <input id="input3" type="text" placeholder="nome">
-                <input class="btn btn-outline-success" type="submit" onclick="add()"  value="Inserir">
-        </div>
+    <div id="div2" style="display: none">
         <div class="col-md-5" style="display: inline-block">
-                <input id="input4" type="number" min="0" placeholder="id">
-                <input class="btn btn-outline-danger" type="button" onclick="retirar()" value="Remover">
+            <input id="input2" type="number" min="0" placeholder="id">
+            <input id="input3" type="text" placeholder="nome">
+            <input class="btn btn-outline-success" type="submit" onclick="add()" value="Inserir">
         </div>
-       
-        
+        <div class="col-md-3" style="display: inline-block">
+            Hash:<input id="m1" type="text"><br>
+            De:<input id="m2" type="text"> Até: <input id="m3" type="text">
+        </div>
+        <div class="col-md-3" style="display: inline-block">
+            <input id="input4" type="number" min="0" placeholder="id">
+            <input class="btn btn-outline-danger" type="button" onclick="retirar()" value="Remover">
+        </div>
+
+
     </div>
     <br />
     <table id="lista" class="table" style="max-width: 1vw">
@@ -40,9 +45,15 @@
 
     <script src="teste1.js"></script>
     <script src="teste1.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

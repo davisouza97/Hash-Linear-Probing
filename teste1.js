@@ -107,8 +107,10 @@ var id = document.getElementById("input2");
 var nome = document.getElementById("input3");
 var remove = document.getElementById("input4");
 var inputMin = document.getElementById("rangeMin");
-console.log(inputMin);
 var inputMax = document.getElementById("rangeMax");
+var m1 = document.getElementById("m1");
+var m2 = document.getElementById("m2");
+var m3 = document.getElementById("m3");
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -127,6 +129,9 @@ function criaLista() {
         console.log(hash);
         document.getElementById("div1").style.display = 'none';
         document.getElementById("div2").style.display = 'block';
+        m1.value = input1.value;
+        m2.value = min;
+        m3.value = max;
         //https://pt.stackoverflow.com/questions/4605/remover-elemento-da-p%C3%A1gina-com-javascript    
         /** 
         if (botao.parentNode) {
