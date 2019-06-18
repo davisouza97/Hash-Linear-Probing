@@ -187,10 +187,9 @@ function renderHash() {
 function add() {
     var campoId = id.value;
     var campoNome = nome.value;
-    console.log("min : " + min + "max : " + max);
     if (campoId < min || campoId > max) {
         console.log("chave fora do universo possivel de chaves");
-
+        alert("chave fora do universo possivel de chaves");
     } else {
         var item = new Item(campoId, campoNome);
         hash.add(item);
@@ -203,6 +202,7 @@ function retirar() {
     var vlr = remove.value;
     if (vlr < min || vlr > max) {
         console.log("chave fora do universo possivel de chaves");
+        alert("chave fora do universo possivel de chaves");
     } else {
         hash.excluir(vlr);
         renderHash();
