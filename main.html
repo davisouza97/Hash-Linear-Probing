@@ -10,19 +10,22 @@
 </head>
 
 <body>
-    <div id="div1" class="col-lg-6">
+    <div id="div1">
+        Hash:
         <input id="input1" type="number" min="0" value="13">
+        Range de Valores permitidos de:
         <input id="rangeMin" type="number" min="0" value="13">
+        Até:
         <input id="rangeMax" type="number" min="0" value="13">
         <input class="btn btn-outline-success" id="botao" type="button" value="Criar Hash" onclick="criaLista()">
     </div>
     <div id="div2" style="display: none"> 
-        <div class="col-lg-6">
+        <div class="col-md-6" style="display: inline-block">
                 <input id="input2" type="number" min="0" placeholder="id">
                 <input id="input3" type="text" placeholder="nome">
                 <input class="btn btn-outline-success" type="submit" onclick="add()"  value="Inserir">
         </div>
-        <div class="col-lg-6">
+        <div class="col-md-5" style="display: inline-block">
                 <input id="input4" type="number" min="0" placeholder="id">
                 <input class="btn btn-outline-danger" type="button" onclick="retirar()" value="Remover">
         </div>
