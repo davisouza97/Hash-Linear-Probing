@@ -157,32 +157,31 @@ function renderHash() {
     for (var index = 0; index < this.hash.size; index++) {
         var celula = linha.insertCell();
         celula.innerHTML = hash.lista[index] === undefined ? "vazio" : hash.lista[index].chave;
+        var cor = "white";
+        if(celula.innerHTML !== "vazio"){
+            if(this.hash.mod(hash.lista[index].chave) === index){
+                cor = "#eeffe6"
+            }else{
+                cor = "#ffe6cc"
+            }
+        }
+        celula.style.backgroundColor = cor;
     }
 
     linha = tabela.insertRow(2);
     for (var index = 0; index < this.hash.size; index++) {
         var celula = linha.insertCell();
         celula.innerHTML = hash.lista[index] === undefined ? "vazio" : hash.lista[index].dado;
-    }
-    /** 
-    for (item of hash.lista) {
-        var numeroLinhas = tabela.rows.length;
-        var linha = tabela.insertRow(numeroLinhas);
-        var celula0 = linha.insertCell(0);
-        var celula1 = linha.insertCell(1);
-        var celula2 = linha.insertCell(2);
-        i++;
-        if (item == undefined) {
-            celula0.innerHTML = i;
-            celula1.innerHTML = "vazio";
-            celula2.innerHTML = "vazio"
-        } else {
-            celula0.innerHTML = i;
-            celula1.innerHTML = item.dado;
-            celula2.innerHTML = item.chave;
+        var cor = "white";
+        if(celula.innerHTML !== "vazio"){
+            if(this.hash.mod(hash.lista[index].chave) === index){
+                cor = "#eeffe6"
+            }else{
+                cor = "#ffe6cc"
+            }
         }
+        celula.style.backgroundColor = cor;
     }
-    */
 }
 
 function add() {
