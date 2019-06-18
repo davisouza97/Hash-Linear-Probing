@@ -115,12 +115,17 @@ function criaLista() {
     if (input1.value != "") {
         console.log(input1.value);
         hash = new Hash(input1.value);
-        console.log(hash)
+        console.log(hash);
+        document.getElementById("div1").style.display ='none';
+        document.getElementById("div2").style.display ='block';
+
         //https://pt.stackoverflow.com/questions/4605/remover-elemento-da-p%C3%A1gina-com-javascript    
+        /** 
         if (botao.parentNode) {
             botao.parentNode.removeChild(botao);
             input1.parentElement.removeChild(input1);
         }
+        */
         renderHash();
     }
 }
@@ -158,8 +163,8 @@ function add() {
 
 }
 
-function remove() {
-    var vlr = id.value;
+function retirar() {
+    var vlr = remove.value;
     hash.excluir(vlr);
     renderHash();
 }

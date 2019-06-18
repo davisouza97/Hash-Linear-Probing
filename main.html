@@ -10,11 +10,11 @@
 </head>
 
 <body>
-    <div>
+    <div id="div1" class="col-lg-6">
         <input id="input1" type="number" min="0" value="13">
         <input class="btn btn-outline-success" id="botao" type="button" value="Criar Hash" onclick="criaLista()">
     </div>
-    <div> 
+    <div id="div2" style="display: none"> 
         <div class="col-lg-6">
                 <input id="input2" type="number" min="0" placeholder="id">
                 <input id="input3" type="text" placeholder="nome">
@@ -22,7 +22,7 @@
         </div>
         <div class="col-lg-6">
                 <input id="input4" type="number" min="0" placeholder="id">
-                <input class="btn btn-outline-danger" type="button" onclick="remove()" value="Remover">
+                <input class="btn btn-outline-danger" type="button" onclick="retirar()" value="Remover">
         </div>
        
         
