@@ -12,13 +12,15 @@
 <body>
     <div id="div1" class="col-lg-6">
         <input id="input1" type="number" min="0" value="13">
+        <input id="rangeMin" type="number" min="0" value="13">
+        <input id="rangeMax" type="number" min="0" value="13">
         <input class="btn btn-outline-success" id="botao" type="button" value="Criar Hash" onclick="criaLista()">
     </div>
     <div id="div2" style="display: none"> 
         <div class="col-lg-6">
                 <input id="input2" type="number" min="0" placeholder="id">
                 <input id="input3" type="text" placeholder="nome">
-                <input class="btn btn-outline-success" type="button" onclick="add()"  value="Inserir">
+                <input class="btn btn-outline-success" type="submit" onclick="add()"  value="Inserir">
         </div>
         <div class="col-lg-6">
                 <input id="input4" type="number" min="0" placeholder="id">

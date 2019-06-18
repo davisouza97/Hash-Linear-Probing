@@ -73,19 +73,19 @@ function Hash(numero) {
             return;
         }
         else {
-            if(this.mod(this.lista[proximo].chave) == proximo){//item já tá no lugar certo
-               // proximo++;
+            if (this.mod(this.lista[proximo].chave) == proximo) {//item já tá no lugar certo
+                // proximo++;
                 this.reposicionar(destino, proximo + 1);
-            }else{
+            } else {
                 this.lista[destino] = this.lista[proximo];
                 this.lista[proximo] = undefined;
-                do{
-                  destino++;  
-                }while(this.mod(this.lista[destino])===destino);
+                do {
+                    destino++;
+                } while (this.mod(this.lista[destino]) === destino);
                 this.reposicionar(destino, proximo + 1);
             }
         }
-        
+
     }
 }
 
@@ -104,21 +104,26 @@ var input1 = document.getElementById("input1");
 var id = document.getElementById("input2");
 var nome = document.getElementById("input3");
 var remove = document.getElementById("input4");
-var hash;
+var min = document.getElementById("rangeMin");
+var max = document.getElementById("rangeMax");
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//variaveis na tela
 
+//var prog
+var hash;
+var min, max;
 
+//
 
 function criaLista() {
     if (input1.value != "") {
         console.log(input1.value);
         hash = new Hash(input1.value);
+        min = inputMin.value;
+        max = inputMax.value;
         console.log(hash);
-        document.getElementById("div1").style.display ='none';
-        document.getElementById("div2").style.display ='block';
-
+        document.getElementById("div1").style.display = 'none';
+        document.getElementById("div2").style.display = 'block';
         //https://pt.stackoverflow.com/questions/4605/remover-elemento-da-p%C3%A1gina-com-javascript    
         /** 
         if (botao.parentNode) {
@@ -138,16 +143,16 @@ function renderHash() {
     for (var index = 0; index < tamanho; index++) {
         tabela.deleteRow(0);
     }
-        var i = -1;
-     for (item of hash.lista) {
+    var i = -1;
+    for (item of hash.lista) {
         var numeroLinhas = tabela.rows.length;
         var linha = tabela.insertRow(numeroLinhas);
         var celula0 = linha.insertCell(0);
         var celula1 = linha.insertCell(1);
         var celula2 = linha.insertCell(2);
         i++;
-         if (item == undefined) {
-            
+        if (item == undefined) {
+
             celula0.innerHTML = i;
             celula1.innerHTML = "vazio";
             celula2.innerHTML = "vazio"
@@ -162,14 +167,23 @@ function renderHash() {
 function add() {
     var campoId = id.value;
     var campoNome = nome.value;
-    var item = new Item(campoId, campoNome);
-    hash.add(item);
-    renderHash();
+    if (campoId < min && campoId > max) {
+        console.log("chave fora do universo possivel de chaves");
 
+    } else {
+        var item = new Item(campoId, campoNome);
+        hash.add(item);
+        renderHash();
+    }
 }
 
 function retirar() {
+
     var vlr = remove.value;
-    hash.excluir(vlr);
-    renderHash();
+    if (vlr < min && vlr > max) {
+        console.log("chave fora do universo possivel de chaves");
+    } else {
+        hash.excluir(vlr);
+        renderHash();
+    }
 }
