@@ -137,8 +137,9 @@ function renderHash() {
      for (item of hash.lista) {
         var numeroLinhas = tabela.rows.length;
         var linha = tabela.insertRow(numeroLinhas);
-        var celula1 = linha.insertCell(0);
-        var celula2 = linha.insertCell(1);
+        var celula0 = linha.incertCell(0);
+        var celula1 = linha.insertCell(1);
+        var celula2 = linha.insertCell(2);
         i++;
          if (item == undefined) {
             
@@ -146,7 +147,7 @@ function renderHash() {
             celula1.innerHTML = "vazio";
             celula2.innerHTML = "vazio"
         } else {
-            celular0.innerHTML = i;
+            celula0.innerHTML = i;
             celula1.innerHTML = item.dado;
             celula2.innerHTML = item.chave;
         }
