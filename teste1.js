@@ -138,16 +138,21 @@ function renderHash() {
     for (var index = 0; index < tamanho; index++) {
         tabela.deleteRow(0);
     }
-
+        var i = -1;
      for (item of hash.lista) {
         var numeroLinhas = tabela.rows.length;
         var linha = tabela.insertRow(numeroLinhas);
-        var celula1 = linha.insertCell(0);
-        var celula2 = linha.insertCell(1);
-        if (item == undefined) {
+        var celula0 = linha.incertCell(0);
+        var celula1 = linha.insertCell(1);
+        var celula2 = linha.insertCell(2);
+        i++;
+         if (item == undefined) {
+            
+            celula0.innerHTML = i;
             celula1.innerHTML = "vazio";
             celula2.innerHTML = "vazio"
         } else {
+            celula0.innerHTML = i;
             celula1.innerHTML = item.dado;
             celula2.innerHTML = item.chave;
         }
