@@ -104,8 +104,9 @@ var input1 = document.getElementById("input1");
 var id = document.getElementById("input2");
 var nome = document.getElementById("input3");
 var remove = document.getElementById("input4");
-var min = document.getElementById("rangeMin");
-var max = document.getElementById("rangeMax");
+var inputMin = document.getElementById("rangeMin");
+console.log(inputMin);
+var inputMax = document.getElementById("rangeMax");
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -119,8 +120,8 @@ function criaLista() {
     if (input1.value != "") {
         console.log(input1.value);
         hash = new Hash(input1.value);
-        min = inputMin.value;
-        max = inputMax.value;
+        min = parseInt(inputMin.value);
+        max = parseInt(inputMax.value);
         console.log(hash);
         document.getElementById("div1").style.display = 'none';
         document.getElementById("div2").style.display = 'block';
@@ -152,7 +153,6 @@ function renderHash() {
         var celula2 = linha.insertCell(2);
         i++;
         if (item == undefined) {
-
             celula0.innerHTML = i;
             celula1.innerHTML = "vazio";
             celula2.innerHTML = "vazio"
@@ -167,7 +167,8 @@ function renderHash() {
 function add() {
     var campoId = id.value;
     var campoNome = nome.value;
-    if (campoId < min && campoId > max) {
+    console.log("min : "+min+"max : "+max);
+    if (campoId < min || campoId > max) {
         console.log("chave fora do universo possivel de chaves");
 
     } else {
@@ -180,7 +181,7 @@ function add() {
 function retirar() {
 
     var vlr = remove.value;
-    if (vlr < min && vlr > max) {
+    if (vlr < min || vlr > max) {
         console.log("chave fora do universo possivel de chaves");
     } else {
         hash.excluir(vlr);
