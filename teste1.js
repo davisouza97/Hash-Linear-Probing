@@ -124,14 +124,17 @@ function renderHash() {
         tabela.deleteRow(0);
     }
 
-    for (item of hash.lista) {
+     for (item of hash.lista) {
         var numeroLinhas = tabela.rows.length;
         var linha = tabela.insertRow(numeroLinhas);
         var celula1 = linha.insertCell(0);
+        var celula2 = linha.insertCell(1);
         if (item == undefined) {
             celula1.innerHTML = "vazio";
+            celula2.innerHTML = "vazio"
         } else {
             celula1.innerHTML = item.dado;
+            celula2.innerHTML = item.chave;
         }
     }
 }
