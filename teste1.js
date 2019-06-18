@@ -142,7 +142,7 @@ function renderHash() {
      for (item of hash.lista) {
         var numeroLinhas = tabela.rows.length;
         var linha = tabela.insertRow(numeroLinhas);
-        var celula0 = linha.incertCell(0);
+        var celula0 = linha.insertCell(0);
         var celula1 = linha.insertCell(1);
         var celula2 = linha.insertCell(2);
         i++;
