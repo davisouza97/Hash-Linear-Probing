@@ -1,6 +1,7 @@
 function Hash(numero) {
     this.lista = new Array(parseInt(numero)); //this == publico/ var == private
     this.size = this.lista.length;
+    
     this.mod = function (indice) {
         return indice % this.size;
     };
@@ -8,7 +9,6 @@ function Hash(numero) {
     this.add = function (item) {
         var mod = this.mod(item.chave);
         //console.log("mod add ::  " + mod);
-
         if (mod < 0 || mod >= this.size) {
             return;
         }
@@ -20,6 +20,7 @@ function Hash(numero) {
             this.colisao(item);
         }
     };
+
     this.colisao = function (item) {  //adicionar um controle para evitar loop infinito se a lista estiver cheia 
         var modulo = this.mod(item.chave);
         for (let i = modulo; i < this.size;) {
