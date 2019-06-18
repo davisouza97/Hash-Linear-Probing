@@ -16,7 +16,7 @@ function Hash(numero) {
         {
             this.lista[mod] = item;
         } else {
-            
+
             this.colisao(item);
         }
     };
@@ -24,12 +24,12 @@ function Hash(numero) {
         var modulo = this.mod(item.chave);
         for (let i = modulo; i < this.size;) {
             if (this.lista[i] != undefined && this.lista[i].chave === item.chave) {
-                alert(item.chave +" item já existe existente");
+                alert(item.chave + " item já existe existente");
                 console.log("item ja add");
                 return;
             }
             if (this.lista[i] === undefined) {
-                alert(item.chave +" colidiu com chave existente");
+                alert(item.chave + " colidiu com chave existente");
                 this.lista[i] = item;
                 break;
             }
@@ -87,8 +87,8 @@ function Hash(numero) {
                 this.reposicionar(destino, proximo + 1);
             }
         }
-
     }
+
 }
 
 
@@ -146,7 +146,25 @@ function renderHash() {
     for (var index = 0; index < tamanho; index++) {
         tabela.deleteRow(0);
     }
-    var i = -1;
+
+    var linha = tabela.insertRow(0);
+    for (var index = 0; index < this.hash.size; index++) {
+        var celula = linha.insertCell();
+        celula.innerHTML = index;
+    }
+
+    linha = tabela.insertRow(1);
+    for (var index = 0; index < this.hash.size; index++) {
+        var celula = linha.insertCell();
+        celula.innerHTML = hash.lista[index] === undefined ? "vazio" : hash.lista[index].chave;
+    }
+
+    linha = tabela.insertRow(2);
+    for (var index = 0; index < this.hash.size; index++) {
+        var celula = linha.insertCell();
+        celula.innerHTML = hash.lista[index] === undefined ? "vazio" : hash.lista[index].dado;
+    }
+    /** 
     for (item of hash.lista) {
         var numeroLinhas = tabela.rows.length;
         var linha = tabela.insertRow(numeroLinhas);
@@ -164,12 +182,13 @@ function renderHash() {
             celula2.innerHTML = item.chave;
         }
     }
+    */
 }
 
 function add() {
     var campoId = id.value;
     var campoNome = nome.value;
-    console.log("min : "+min+"max : "+max);
+    console.log("min : " + min + "max : " + max);
     if (campoId < min || campoId > max) {
         console.log("chave fora do universo possivel de chaves");
 
