@@ -23,7 +23,7 @@ function Hash(numero) {
     this.colisao = function (item) {  //adicionar um controle para evitar loop infinito se a lista estiver cheia 
         var modulo = this.mod(item.chave);
         for (let i = modulo; i < this.size;) {
-            if (this.lista[i] != undefined &&this.lista[i].dado === item.dado) {
+            if (this.lista[i] != undefined && this.lista[i].chave === item.chave) {
                 console.log("item ja add");
                 return;
             }
@@ -45,7 +45,7 @@ function Hash(numero) {
         var modulo = this.mod(chave);
         //console.log("mod remoção ::  " + modulo);
         if (modulo < 0 || modulo >= this.size || this.lista[modulo] === undefined) {
-            console.log("valor não existe")
+            console.log("valor não existe");
             return;
         } else {
             for (let i = this.mod(chave); i < this.size;) {
@@ -68,25 +68,24 @@ function Hash(numero) {
             }
         }
     }
-    this.reposicionar = function (destino, origem) {
-        var posicao = origem;
-        if (this.lista[posicao] === undefined) {
+    this.reposicionar = function (destino, proximo) {
+        if (this.lista[proximo] === undefined) {//posição seguinte vazia(abortar)
             return;
         }
         else {
-            if (this.mod(this.lista[posicao].chave) !== posicao) {  //colisao
-                this.lista[destino] = this.lista[posicao];
-                this.lista[posicao] = undefined;
-                return
-            }
-            if (this.mod(this.lista[posicao].chave) === posicao) { //nao colisao
-                this.reposicionar(destino, posicao + 1);
+            if(this.mod(this.lista[proximo].chave) == proximo){//item já tá no lugar certo
+               // proximo++;
+                this.reposicionar(destino, proximo + 1);
+            }else{
+                this.lista[destino] = this.lista[proximo];
+                this.lista[proximo] = undefined;
+                do{
+                  destino++;  
+                }while(this.mod(this.lista[destino])===destino);
+                this.reposicionar(destino, proximo + 1);
             }
         }
-        if (this.lista[posicao + 1] !== undefined) {
-            this.reposicionar(posicao, posicao + 1);
-        }
-
+        
     }
 }
 
