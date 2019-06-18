@@ -13,11 +13,18 @@
         <input id="input1" type="number" min="0" value="13">
         <input id="botao" type="button" value="Criar Hash" onclick="criaLista()">
     </div>
-    <div>
-        <input id="input2" type="number" min="0" placeholder="id">
-        <input id="input3" type="text" placeholder="nome">
-        <input type="button" onclick="add()"  value="Inserir">
-        <input type="button" onclick="remove()" value="REmover">
+    <div> 
+        <div class="col-lg-6">
+                <input id="input2" type="number" min="0" placeholder="id">
+                <input id="input3" type="text" placeholder="nome">
+                <input type="button" onclick="add()"  value="Inserir">
+        </div>
+        <div class="col-lg-6">
+                <input id="input2" type="number" min="0" placeholder="id">
+                <input type="button" onclick="remove()" value="Remover">
+        </div>
+       
+        
     </div>
     <br />
     <table id="lista" border="1">
