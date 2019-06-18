@@ -16,7 +16,7 @@ function Hash(numero) {
         {
             this.lista[mod] = item;
         } else {
-
+            alert(item.chave +" colidiu com chave existente");
             this.colisao(item);
         }
     };
