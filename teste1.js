@@ -95,12 +95,22 @@ function Item(chave, nome) {
     this.dado = nome;
 }
 
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//variaveis na tela
+
 var listElement = document.getElementById("lista");
 var botao = document.getElementById("botao");
 var input1 = document.getElementById("input1");
 var id = document.getElementById("input2");
 var nome = document.getElementById("input3");
+var remove = document.getElementById("input4");
 var hash;
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//variaveis na tela
+
+
+
 function criaLista() {
     if (input1.value != "") {
         console.log(input1.value);
