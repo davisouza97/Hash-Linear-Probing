@@ -30,7 +30,7 @@ function Hash(numero) {
                 return;
             }
             if (this.lista[i] === undefined) {
-                alert(item.chave + " colidiu com chave existente");
+                alert(item.chave + " colidiu com chave existente " + modulo + " e foi encaminhada para o proximo vazio!");
                 this.lista[i] = item;
                 break;
             }
