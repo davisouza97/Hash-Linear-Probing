@@ -1,7 +1,7 @@
 function Hash(numero) {
     this.lista = new Array(parseInt(numero)); //this == publico/ var == private
     this.size = this.lista.length;
-    
+
     this.mod = function (indice) {
         return indice % this.size;
     };
@@ -55,9 +55,7 @@ function Hash(numero) {
                 if (this.lista[i].chave === chave) {
                     console.log("Remocao" + this.lista[i].chave + "--" + this.lista[i].dado);
                     this.lista[i] = undefined;
-                    if (this.lista[i + 1] !== undefined) {
-                        this.reposicionar(i, i + 1);
-                    }
+                    this.reposicionar(i, i + 1);
                     break;
                 }
                 if (i === this.size - 1) {
@@ -72,6 +70,9 @@ function Hash(numero) {
         }
     }
     this.reposicionar = function (destino, proximo) {
+        if (proximo >= this.size) {
+            proximo = 0;
+        }
         if (this.lista[proximo] === undefined) {//posição seguinte vazia(abortar)
             return;
         }
@@ -84,7 +85,13 @@ function Hash(numero) {
                 this.lista[proximo] = undefined;
                 do {
                     destino++;
+                    if (destino >= this.size) {
+                        destino = 0;
+                    }
                 } while (this.mod(this.lista[destino]) === destino);
+                if (proximo + 1 >= this.size) {
+                    proximo = -1;
+                }
                 this.reposicionar(destino, proximo + 1);
             }
         }
@@ -164,10 +171,10 @@ function renderHash() {
         var celula = linha.insertCell();
         celula.innerHTML = hash.lista[index] === undefined ? "vazio" : hash.lista[index].chave;
         var cor = "white";
-        if(celula.innerHTML !== "vazio"){
-            if(this.hash.mod(hash.lista[index].chave) === index){
+        if (celula.innerHTML !== "vazio") {
+            if (this.hash.mod(hash.lista[index].chave) === index) {
                 cor = "#eeffe6"
-            }else{
+            } else {
                 cor = "#ffe6cc"
             }
         }
@@ -179,10 +186,10 @@ function renderHash() {
         var celula = linha.insertCell();
         celula.innerHTML = hash.lista[index] === undefined ? "vazio" : hash.lista[index].dado;
         var cor = "white";
-        if(celula.innerHTML !== "vazio"){
-            if(this.hash.mod(hash.lista[index].chave) === index){
+        if (celula.innerHTML !== "vazio") {
+            if (this.hash.mod(hash.lista[index].chave) === index) {
                 cor = "#eeffe6"
-            }else{
+            } else {
                 cor = "#ffe6cc"
             }
         }
